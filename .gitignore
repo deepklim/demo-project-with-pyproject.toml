@@ -1,0 +1,19 @@
+# Builds / caches
+*.egg-info/
+.python_packages/
+__pycache__/
+build/
+dist/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Unit tests
+htmlcov/
+.coverage
+
+# Virtual environments
+.venv/
+venv/

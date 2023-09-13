@@ -1,0 +1,36 @@
+[project]
+name = "huge"
+version = "1.0.0"
+description = "Demo Python distribution package using pyproject.toml."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["requests"]
+
+[project.scripts]
+huge-cli = "huge.get_name:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*"]
+
+[tool.black]
+target-version = ["py310"]
+# Black ignores files and directories in .gitignore by default
+
+# [tool.flake8]
+# Exceptionally, flake8 uses a separate config file named `.flake8`
+
+[tool.isort]
+profile = "black"
+py_version = 310
+skip_gitignore = true
+
+[tool.mypy]
+python_version = "3.10"
+# Exclude all directories beginning in __ or ., e.g. __pycache__, .git
+exclude = '(.*\.egg-info|build|dist|htmlcov|venv|\..*|__.*)/'
+ignore_missing_imports = true
